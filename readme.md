@@ -1,13 +1,8 @@
 
 # Readme
 
->React 💀 Scaffolding project using **webpack** 2.0 and styling with **styled-components**
+>💀 React-redux scaffolding with *Styled-components*, *Webpack 2.0* & *React-router v4*
 
 ## Features
 
-* Webpack with *Code splitting* & *image loaders*
-* Styled with [styled-components](https://github.com/styled-components/styled-components)
-* Customized airbnb eslint
-
-## Notes
-* Need to add to the `webpack.config.js` the vendor packages names (to do the code splitting)
+* Initial setup from [react-bones](https://github.com/Influencity/react-bones)
