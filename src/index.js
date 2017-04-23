@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import ReduxThunk from 'redux-thunk';
+
+import App from './App';
 
 
-const HelloBoss = props => <h1>{props.message}😎</h1>;
+const rootReducer = combineReducers({
+  state: (state = {}) => state
+});
 
-HelloBoss.propTypes = {
-  message: PropTypes.string.isRequired
-};
+const createStoreWithMiddleware = applyMiddleware(ReduxThunk)(createStore);
 
-const App = () =>
-  <div>
-    <HelloBoss message='hello' />
-  </div>;
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(rootReducer)}>
+    <App />
+  </Provider>
+  , document.querySelector('.container'));
