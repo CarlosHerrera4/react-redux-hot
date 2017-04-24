@@ -16,6 +16,9 @@ const config = {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].[hash]js'
   },
+  devServer: {
+    historyApiFallback: true
+  },
   module: {
     rules: [
       {
