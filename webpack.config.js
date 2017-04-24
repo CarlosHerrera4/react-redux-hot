@@ -25,6 +25,7 @@ const config = {
         query: {
           presets: [
             'babel-preset-env',
+            'stage-0',
             'react'
           ]
         }

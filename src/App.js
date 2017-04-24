@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 
@@ -14,4 +13,4 @@ const App = () =>
     <HelloBoss message='hello' />
   </div>;
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default App;
