@@ -1,8 +1,3 @@
-import React from 'react';
-
-const Counter = () =>
-  <div>
-   Hello counter route! 😎
- </div>;
+import Counter from './containers/Counter';
 
 export default Counter;
