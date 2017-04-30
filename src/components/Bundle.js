@@ -6,7 +6,7 @@ class Bundle extends Component {
     super(props);
     this.state = {
       // short for "module" but that's a keyword in js, so "mod"
-      mod: null
+      mod: null,
     };
   }
 
@@ -22,12 +22,12 @@ class Bundle extends Component {
 
   load(props) {
     this.setState({
-      mod: null
+      mod: null,
     });
     props.load((mod) => {
       this.setState({
         // handle both es imports and cjs
-        mod: mod.default ? mod.default : mod
+        mod: mod.default ? mod.default : mod,
       });
     });
   }
@@ -39,7 +39,7 @@ class Bundle extends Component {
 
 Bundle.propTypes = {
   children: PropTypes.node.isRequired,
-  load: PropTypes.func.isRequired
+  load: PropTypes.func.isRequired,
 };
 
 export default Bundle;

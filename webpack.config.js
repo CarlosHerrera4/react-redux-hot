@@ -5,19 +5,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VENDOR_LIBS = [
   'react',
   'react-dom',
-  'styled-components'
+  'styled-components',
 ];
 const config = {
   entry: {
     bundle: './src/index.js',
-    vendor: VENDOR_LIBS
+    vendor: VENDOR_LIBS,
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].[hash]js'
+    filename: '[name].[hash]js',
+    chunkFilename: '[name]-[id].js',
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -29,33 +30,33 @@ const config = {
           presets: [
             'babel-preset-env',
             'stage-0',
-            'react'
-          ]
-        }
+            'react',
+          ],
+        },
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
           {
             loader: 'url-loader',
-            options: { limit: 40000 }
+            options: { limit: 40000 },
           },
           {
             loader: 'image-webpack-loader',
-            options: {}
-          }
-        ]
-      }
-    ]
+            options: {},
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest']
+      names: ['vendor', 'manifest'],
     }),
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    })
-  ]
+      template: 'src/index.html',
+    }),
+  ],
 };
 
 module.exports = config;
