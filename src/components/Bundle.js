@@ -38,7 +38,7 @@ class Bundle extends Component {
 }
 
 Bundle.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.func.isRequired,
   load: PropTypes.func.isRequired,
 };
 
