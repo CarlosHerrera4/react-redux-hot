@@ -26,13 +26,6 @@ const config = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        query: {
-          presets: [
-            'babel-preset-env',
-            'stage-0',
-            'react',
-          ],
-        },
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,

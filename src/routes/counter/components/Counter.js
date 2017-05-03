@@ -10,6 +10,7 @@ const Counter = props =>
     <button onClick={props.decreaseCounter}>Decrease</button>
   </div>;
 
+
 Counter.propTypes = {
   counter: PropTypes.number.isRequired,
   incrementCounter: PropTypes.func.isRequired,

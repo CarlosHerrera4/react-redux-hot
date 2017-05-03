@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter 1`] = `
+<div>
+  Hello counter route! 😎
+  <hr />
+  <span>
+    0
+  </span>
+  <button
+    onClick={[Function]}
+  >
+    Increment
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Decrease
+  </button>
+</div>
+`;
