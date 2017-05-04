@@ -7,10 +7,10 @@ test('Counter', () => {
   const component = renderer.create(
     <Counter
       counter={counter}
-      incrementCounter={() => counter += 1}
-      decreaseCounter={() => counter -= 1}
+      incrementCounter={() => { counter += 1; }}
+      decreaseCounter={() => { counter -= 1; }}
     />
   );
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
