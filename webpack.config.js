@@ -28,6 +28,10 @@ const config = {
         exclude: /node_modules/,
       },
       {
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
           {

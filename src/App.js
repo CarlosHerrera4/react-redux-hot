@@ -4,16 +4,16 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  Switch
+  Switch,
 } from 'react-router-dom';
-
+import 'normalize.css';
 import Home from './routes/home';
 import Counter from './routes/counter';
 
 const HelloBoss = () => <h1>404 No matches dude⚠</h1>;
 
 HelloBoss.propTypes = {
-  message: PropTypes.string.isRequired
+  message: PropTypes.string.isRequired,
 };
 
 const App = () =>
