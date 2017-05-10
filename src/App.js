@@ -13,12 +13,6 @@ import Home from './routes/home';
 import Counter from './routes/counter';
 import Navbar from './components/Navbar';
 
-const HelloBoss = () => <h1>404 No matches dude⚠</h1>;
-
-HelloBoss.propTypes = {
-  message: PropTypes.string.isRequired,
-};
-
 const App = props =>
   <Router>
     <div className={`${props.className} app-container`}>
@@ -26,7 +20,7 @@ const App = props =>
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
-        <Route component={HelloBoss} />
+        <Route component={Home} />
       </Switch>
     </div>
   </Router>;

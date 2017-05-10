@@ -14,9 +14,9 @@ const initialState = 0;
 export default function counterReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_COUNTER:
-      return state + 1;
+      return state + 0.8;
     case DECREASE_COUNTER:
-      return state <= 0 ? state : state - 1;
+      return state <= 0 ? state : state - 0.8;
     default:
       return state;
   }

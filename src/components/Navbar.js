@@ -10,14 +10,20 @@ const Navbar = props =>
   </ul>;
 
 const NavbarStyled = styled(Navbar)`
+  height: 64px;
   display: flex;
+  align-items: center;
   list-style: none;
   margin: 0;
+  border-bottom: 1px solid black;
   a {
     color: black;
     display: inline-block;
-    padding: 8px 32px;
+    padding: 16px 32px;
     text-decoration: none;
+    &:hover{
+      color: #B9B9B9;
+    }
   }
 `;
 
