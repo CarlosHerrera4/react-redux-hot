@@ -1,10 +1,10 @@
 {
-  "name": "react-redux-bones",
+  "name": "react-redux-hot",
   "version": "1.0.0",
-  "description": "React 💀 Scaffolding proyect",
+  "description": "React 🔥 Scaffolding proyect",
   "main": "index.js",
-  "repository": "https://github.com/Influencity/react-redux-bones.git",
-  "author": "Jimeno0&AVilva",
+  "repository": "https://github.com/Influencity/react-redux-hot.git",
+  "author": "Jimeno0",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf build",
