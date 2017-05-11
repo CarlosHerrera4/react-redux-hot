@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Button from '../../../components/Button';
 import fireImg from '../../../assets/Fire_emoji.png';
 
 const Fire = props =>
@@ -9,8 +10,8 @@ const Fire = props =>
       <img src={fireImg} alt='fire emoji' />
     </section>
     <section className='action-buttons'>
-      <button onClick={props.incrementFire}>Increment</button>
-      <button onClick={props.decreaseFire}>Decrease</button>
+      <Button onClick={props.incrementFire}>Increment</Button>
+      <Button onClick={props.decreaseFire}>Decrease</Button>
     </section>
   </section>;
 
@@ -32,18 +33,6 @@ const FireStyled = styled(Fire)`
   .action-buttons{
     z-index: 1;
     height: 80px;
-    button {
-      padding: 8px 32px;
-      margin: 0 16px;
-      background: white;
-      border: 1px solid black;
-      border-radius: 2px; 
-      &:hover{
-        cursor: pointer;
-        color: #a9a9a9;
-        border-color: #a9a9a9;
-      }
-    }
   }
 `;
 
