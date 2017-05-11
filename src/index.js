@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import ReduxThunk from 'redux-thunk';
 
 import App from './App';
-import counter from './modules/counter';
+import fire from './modules/fire';
 
 const enhancers = [];
 // redux devTools
@@ -15,7 +15,7 @@ if (typeof devToolsExtension === 'function') {
 }
 
 const makeRootReducer = asyncReducers => combineReducers({
-  counter,
+  fire,
   ...asyncReducers
 });
 

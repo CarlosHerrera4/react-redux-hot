@@ -10,7 +10,7 @@ import {
 import 'normalize.css';
 
 import Home from './routes/home';
-import Counter from './routes/counter';
+import Fire from './routes/fire';
 import Navbar from './components/Navbar';
 
 const App = props =>
@@ -19,7 +19,7 @@ const App = props =>
       <Navbar />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
+        <Route path='/fire' component={Fire} />
         <Route component={Home} />
       </Switch>
     </div>

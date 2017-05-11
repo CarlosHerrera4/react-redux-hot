@@ -1,6 +1,6 @@
 import React from 'react';
 import Bundle from '../../components/Bundle';
-// Import LoaderCounter when is used
+// Import LoaderFire when is used
 import LoadHome from 'bundle-loader?lazy&name=[name]!./components/Home.js';
 import Loading from '../../components/Loading';
 

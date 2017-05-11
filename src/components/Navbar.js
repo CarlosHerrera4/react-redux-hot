@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Navbar = props =>
   <ul className={`${props.className} navbar`}>
     <li><Link to='/'>Home</Link></li>
-    <li><Link to='/counter'>Counter</Link></li>
+    <li><Link to='/fire'>Fire</Link></li>
   </ul>;
 
 const NavbarStyled = styled(Navbar)`

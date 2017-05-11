@@ -9,8 +9,8 @@ const Fire = props =>
       <img src={fireImg} alt='fire emoji' />
     </section>
     <section className='action-buttons'>
-      <button onClick={props.incrementCounter}>Increment</button>
-      <button onClick={props.decreaseCounter}>Decrease</button>
+      <button onClick={props.incrementFire}>Increment</button>
+      <button onClick={props.decreaseFire}>Decrease</button>
     </section>
   </section>;
 
@@ -25,7 +25,7 @@ const FireStyled = styled(Fire)`
     justify-content: center;
     align-items: center;
     img {
-      transform: ${props => `scale(${1 + props.counter})`};
+      transform: ${props => `scale(${1 + props.fire})`};
       transition: all ease-in-out 0.1s;
     }
   }
@@ -48,8 +48,8 @@ const FireStyled = styled(Fire)`
 `;
 
 Fire.propTypes = {
-  incrementCounter: PropTypes.func.isRequired,
-  decreaseCounter: PropTypes.func.isRequired,
+  incrementFire: PropTypes.func.isRequired,
+  decreaseFire: PropTypes.func.isRequired,
   className: PropTypes.string.isRequired,
 };
 

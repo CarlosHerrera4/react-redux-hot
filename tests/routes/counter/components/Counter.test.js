@@ -1,14 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Counter from '../../../../src/routes/counter/components/Counter';
+import Fire from '../../../../src/routes/fire/components/Fire';
 
-test('Counter', () => {
-  let counter = 0;
+test('Fire', () => {
+  let fire = 0;
   const component = renderer.create(
-    <Counter
-      counter={counter}
-      incrementCounter={() => { counter += 1; }}
-      decreaseCounter={() => { counter -= 1; }}
+    <Fire
+      fire={fire}
+      incrementFire={() => { fire += 1; }}
+      decreaseFire={() => { fire -= 1; }}
     />
   );
   const tree = component.toJSON();

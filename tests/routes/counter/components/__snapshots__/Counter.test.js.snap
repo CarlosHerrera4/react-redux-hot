@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Counter 1`] = `
+exports[`Fire 1`] = `
 <div>
-  Hello counter route! 😎
+  Hello fire route! 😎
   <hr />
   <span>
     0
