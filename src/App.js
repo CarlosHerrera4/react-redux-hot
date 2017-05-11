@@ -27,6 +27,7 @@ const App = props =>
 
 const AppStyled = styled(App)`
   font-family: helvetica;
+  height: 100%;
 `;
 
 App.propTypes = {
