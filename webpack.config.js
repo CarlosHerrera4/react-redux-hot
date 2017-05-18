@@ -19,6 +19,7 @@ const config = {
   },
   devServer: {
     historyApiFallback: true,
+    // publicPath: '/assets/',
   },
   module: {
     rules: [

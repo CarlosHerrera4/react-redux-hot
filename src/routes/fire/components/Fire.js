@@ -1,19 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Button from '../../../components/Button';
 import fireImg from '../../../assets/Fire_emoji.png';
 
-const Fire = props =>
-  <section className={`${props.className} fire-container`}>
-    <section className='image-container'>
-      <img src={fireImg} alt='fire emoji' />
-    </section>
-    <section className='action-buttons'>
-      <Button onClick={props.incrementFire}>Increment</Button>
-      <Button onClick={props.decreaseFire}>Decrease</Button>
-    </section>
-  </section>;
+class Fire extends Component {
+  componentDidMount() {
+    this.props.fetchFire();
+  }
+  render() {
+    return (
+      <section className={`${this.props.className} fire-container`}>
+        <section className='image-container'>
+          <img src={fireImg} alt='fire emoji' />
+        </section>
+        <section className='action-buttons'>
+          <Button onClick={this.props.incrementFire}>Increment</Button>
+          <Button onClick={this.props.decreaseFire}>Decrease</Button>
+        </section>
+      </section>
+    );
+  }
+}
+// const Fire = props =>
+//   <section className={`${props.className} fire-container`}>
+//     <section className='image-container'>
+//       <img src={fireImg} alt='fire emoji' />
+//     </section>
+//     <section className='action-buttons'>
+//       <Button onClick={props.incrementFire}>Increment</Button>
+//       <Button onClick={props.decreaseFire}>Decrease</Button>
+//     </section>
+//   </section>;
 
 const FireStyled = styled(Fire)`
   display: flex;
@@ -39,6 +57,7 @@ const FireStyled = styled(Fire)`
 Fire.propTypes = {
   incrementFire: PropTypes.func.isRequired,
   decreaseFire: PropTypes.func.isRequired,
+  fetchFire: PropTypes.func.isRequired,
   className: PropTypes.string.isRequired,
 };
 

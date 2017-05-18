@@ -9,6 +9,7 @@ test('Fire', () => {
       fire={fire}
       incrementFire={() => { fire += 1; }}
       decreaseFire={() => { fire -= 1; }}
+      fetchFire={() => '🔥'}
     />
   );
   const tree = component.toJSON();
