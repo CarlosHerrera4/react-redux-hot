@@ -1,5 +1,5 @@
-const FIRE_ADD = 'FIRE_ADD';
-const FIRE_DECREASE = 'FIRE_DECREASE';
+export const FIRE_ADD = 'FIRE_ADD';
+export const FIRE_DECREASE = 'FIRE_DECREASE';
 
 export function incrementFire() {
   return { type: FIRE_ADD, payload: null };

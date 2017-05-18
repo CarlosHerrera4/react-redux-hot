@@ -10,7 +10,8 @@
     "clean": "rimraf build",
     "build": "npm run clean && webpack",
     "dev": "webpack-dev-server",
-    "test": "jest --watch"
+    "test": "jest",
+    "test:dev": "jest --watch"
   },
   "jest": {
     "moduleNameMapper": {

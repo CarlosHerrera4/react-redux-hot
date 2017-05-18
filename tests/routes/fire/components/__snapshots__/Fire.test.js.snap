@@ -2,7 +2,7 @@
 
 exports[`Fire 1`] = `
 <section
-  className="WXgdN fire-container"
+  className="gbQwjE fire-container"
 >
   <section
     className="image-container"
@@ -16,11 +16,13 @@ exports[`Fire 1`] = `
     className="action-buttons"
   >
     <button
+      className="hDNYrD"
       onClick={[Function]}
     >
       Increment
     </button>
     <button
+      className="hDNYrD"
       onClick={[Function]}
     >
       Decrease
