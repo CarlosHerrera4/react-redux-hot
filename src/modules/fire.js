@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch';
 // constants
 export const FIRE_ADD = 'FIRE_ADD';
 export const FIRE_DECREASE = 'FIRE_DECREASE';
@@ -8,7 +9,7 @@ export const incrementFire = () =>
   ({ type: FIRE_ADD, payload: null });
 export const decreaseFire = () =>
   ({ type: FIRE_DECREASE, payload: null });
-export const fetchFireSuccess = fire =>
+export const fireFetchSuccess = fire =>
  ({ type: FIRE_FETCH_SUCCESS, payload: fire });
 
 // Async actions creators
@@ -16,7 +17,7 @@ export const fetchFire = () => dispatch =>
   fetch('src/assets/fire.json')
     .then(response => response.json())
     .then((data) => {
-      dispatch(fetchFireSuccess(data.fire));
+      dispatch(fireFetchSuccess(data.fire));
     })
     .catch((error) => {
       console.error(error);
@@ -36,7 +37,6 @@ export default function fireReducer(state = initialState, action) {
         fireSize: state.fireSize + 0.8,
       };
     case FIRE_DECREASE:
-      // return state <= 0 ? state : state - 0.8;
       return {
         ...state,
         fireSize: state.fireSize <= 0 ? state.fireSize : state.fireSize - 0.8,
