@@ -16,6 +16,7 @@ const config = {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].[hash]js',
     chunkFilename: '[name]-[id].js',
+    // publicPath: path.resolve(__dirname, 'src/assets'),
   },
   devServer: {
     historyApiFallback: true,

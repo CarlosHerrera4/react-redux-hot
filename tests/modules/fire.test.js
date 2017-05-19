@@ -40,19 +40,18 @@ describe('fire sync actions', () => {
 
 describe('fire async actions', () => {
   afterEach(() => {
-    nock.clearAll();
+    nock.cleanAll();
   });
 
   it(' creates FIRE_FETCH_SUCCESS when fetching 🔥 has been done', () => {
-    nock('src/assets/')
-      .get('/fire.json')
+    nock('http://localhost:8080/')
+      .get('/api/example')
       .reply(200, { fire: '🔥' });
-
-    const expectedAction = [{ type: FIRE_FETCH_SUCCESS, fire: '🔥' }];
+    const expectedAction = [{ type: FIRE_FETCH_SUCCESS, payload: '🔥' }];
     const store = mockStore({ fire: '', fireSize: 0 });
     return store.dispatch(fetchFire())
       .then(() => {
-        console.log(store.getActions());
+        console.log(store.getActions());//eslint-disable-line
         expect(store.getActions()).toEqual(expectedAction);
       });
   });

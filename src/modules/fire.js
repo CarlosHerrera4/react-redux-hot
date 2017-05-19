@@ -14,13 +14,13 @@ export const fireFetchSuccess = fire =>
 
 // Async actions creators
 export const fetchFire = () => dispatch =>
-  fetch('src/assets/fire.json')
-    .then(response => response.json())
-    .then((data) => {
-      dispatch(fireFetchSuccess(data.fire));
-    })
+  fetch('http://localhost:8080/api/example', { mode: 'no-cors', body: null })
+  .then(response => response.json())
+  .then((data) => {
+    dispatch(fireFetchSuccess(data.fire));
+  })
     .catch((error) => {
-      console.error(error);
+      console.error(error);//eslint-disable-line
     });
 
 // Reducer
