@@ -1,11 +1,12 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
-import { FIRE_ADD, FIRE_DECREASE, FIRE_FETCH_SUCCESS, incrementFire, decreaseFire, fireFetchSuccess, fetchFire } from '../../src/modules/fire';
+import reducer, { FIRE_ADD, FIRE_DECREASE, FIRE_FETCH_SUCCESS, incrementFire, decreaseFire, fireFetchSuccess, fetchFire } from '../../src/modules/fire';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
+// sync actions testing
 describe('fire sync actions', () => {
   it('should create an action to increment fire size', () => {
     const expectedAction = {
@@ -37,7 +38,7 @@ describe('fire sync actions', () => {
   });
 });
 
-
+// async actions tests
 describe('fire async actions', () => {
   afterEach(() => {
     nock.cleanAll();
@@ -51,8 +52,62 @@ describe('fire async actions', () => {
     const store = mockStore({ fire: '', fireSize: 0 });
     return store.dispatch(fetchFire())
       .then(() => {
-        console.log(store.getActions());//eslint-disable-line
         expect(store.getActions()).toEqual(expectedAction);
       });
+  });
+});
+
+// reducers tests
+describe('fire reducer', () => {
+  // test initial state
+  it('should return the initial state', () => {
+    expect(
+      reducer(undefined, {})
+    ).toEqual(
+      {
+        fire: '',
+        fireSize: 0,
+      }
+    );
+  });
+  // test some reducer cases
+  it('should increase fire size in 0.8 on FIRE_ADD action', () => {
+    expect(
+      reducer(
+        {
+          fire: '',
+          fireSize: 0,
+        },
+        {
+          type: FIRE_ADD,
+          payload: null,
+        }
+      )
+    ).toEqual(
+      {
+        fire: '',
+        fireSize: 1,
+      }
+    );
+  });
+  
+  it('should decrease fire size in 0.8 on FIRE_DECREASE action', () => {
+    expect(
+      reducer(
+        {
+          fire: '',
+          fireSize: 1,
+        },
+        {
+          type: FIRE_DECREASE,
+          payload: null,
+        }
+      )
+    ).toEqual(
+      {
+        fire: '',
+        fireSize: 0,
+      }
+    );
   });
 });

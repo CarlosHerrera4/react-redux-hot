@@ -34,12 +34,12 @@ export default function fireReducer(state = initialState, action) {
     case FIRE_ADD:
       return {
         ...state,
-        fireSize: state.fireSize + 0.8,
+        fireSize: state.fireSize + 1,
       };
     case FIRE_DECREASE:
       return {
         ...state,
-        fireSize: state.fireSize <= 0 ? state.fireSize : state.fireSize - 0.8,
+        fireSize: state.fireSize <= 0 ? state.fireSize : state.fireSize - 1,
       };
     case FIRE_FETCH_SUCCESS:
       return {
