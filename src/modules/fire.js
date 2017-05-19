@@ -14,7 +14,7 @@ export const fireFetchSuccess = fire =>
 
 // Async actions creators
 export const fetchFire = () => dispatch =>
-  fetch('http://localhost:8080/api/example', { mode: 'no-cors', body: null })
+  fetch('http://localhost:8080/api/example')
   .then(response => response.json())
   .then((data) => {
     dispatch(fireFetchSuccess(data.fire));

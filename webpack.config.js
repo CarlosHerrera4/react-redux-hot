@@ -14,13 +14,11 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].[hash]js',
-    chunkFilename: '[name]-[id].js',
-    // publicPath: path.resolve(__dirname, 'src/assets'),
+    filename: '[name].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].js',
   },
   devServer: {
     historyApiFallback: true,
-    // publicPath: '/assets/',
   },
   module: {
     rules: [

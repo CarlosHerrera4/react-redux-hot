@@ -22,16 +22,6 @@ class Fire extends Component {
     );
   }
 }
-// const Fire = props =>
-//   <section className={`${props.className} fire-container`}>
-//     <section className='image-container'>
-//       <img src={fireImg} alt='fire emoji' />
-//     </section>
-//     <section className='action-buttons'>
-//       <Button onClick={props.incrementFire}>Increment</Button>
-//       <Button onClick={props.decreaseFire}>Decrease</Button>
-//     </section>
-//   </section>;
 
 const FireStyled = styled(Fire)`
   display: flex;
